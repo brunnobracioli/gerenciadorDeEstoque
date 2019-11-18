@@ -15,8 +15,11 @@ Métodos:
 
 • public double vender(int quantidade) – remove a quantidade pedida do estoque, e
 retorna o valor de venda equivalente – caso não haja quantidade suficiente, retorne -1;
+
 • public void comprar(int quantidade) – adiciona a quantidade pedida ao estoque;
+
 • public String imprimir() – retorna todos os dados do produto;
+
 Construtor: apenas um, com todos os dados;
 Gets e sets: gets para todos os atributos, quantidade sem set;
 
