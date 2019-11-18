@@ -1,2 +1,0 @@
-# gerenciadorDeEstoque
-projeto APS POO
