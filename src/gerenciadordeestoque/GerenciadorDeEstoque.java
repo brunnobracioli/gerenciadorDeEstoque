@@ -21,15 +21,15 @@ public class GerenciadorDeEstoque {
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Produto prod1 = new Produto("testeprod1", "testeFab", 001, 1.99f, 3);
+        Produto prod1 = new Produto("testeprod1", "testeFab", 001, 1.99f, 0);
         //System.out.format("%.2f \n",prod1.Vender(1));
         prod1.comprar(5);
         //System.out.println(prod1.imprimir());
-        Eletronico eletro1 = new Eletronico("testeEletro1", "testeFab", 002, 1.99f, 3, "220v", 1, 'a');
+        Eletronico eletro1 = new Eletronico("testeEletro1", "testeFab", 002, 1.99f, 0, "220v", 1, 'a');
         Eletronico eletro2 = new Eletronico("testeEletro2", "testeFab2", 003, 1.99f, 4, "220v", 1, 'b');
         //System.out.println("");
         //System.out.println(eletro1.imprimir());
-        Movel movel1 = new Movel("testeMovel", "testeFab", 003, 3.40f, 6, "madeira", "marrom");
+        Movel movel1 = new Movel("testeMovel", "testeFab", 003, 3.40f, 0, "madeira", "marrom");
         //System.out.println(movel1.imprimir());
         Perecivel perecivel1 = new Perecivel("TestePerecivel", "testeFab", 004, 5.87f, 10, "27/10/2019", true);
         //System.out.println(perecivel1.imprimir());
@@ -39,6 +39,7 @@ public class GerenciadorDeEstoque {
        GerenciarProduto gerenciador = new GerenciarProduto();
        //gerenciador.adicionar(new Produto(in.nextLine(), in.nextLine(), in.nextInt(), in.nextFloat(), in.nextInt()));
        
+       gerenciador.adicionar(prod1);
        gerenciador.adicionar(eletro1);
        gerenciador.adicionar(eletro2);
        gerenciador.adicionar(movel1);
@@ -57,7 +58,7 @@ public class GerenciadorDeEstoque {
             System.out.println("Produto não encotrado");
         }
         */
-        System.out.println(gerenciador.listarPerecivel());
+        System.out.println(gerenciador.listarPorFabricante("testeFab2"));
     }
 
     

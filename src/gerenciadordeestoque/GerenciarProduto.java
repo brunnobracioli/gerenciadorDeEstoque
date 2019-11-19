@@ -55,4 +55,30 @@ public class GerenciarProduto {
         }
         return moveis;
     }
+    public String listarEstoqueMenorQue(int quantidadeMinima){
+        String estoqueMenor = "";
+        for(Produto a : this.produtos.stream().filter(t -> t.getQuantidade() < quantidadeMinima).collect(Collectors.toList())){
+            estoqueMenor += a.imprimir() + "\n";
+        }
+        return estoqueMenor;
+    }
+    public String listarEstoqueVazio(){
+        String estoqueVazio = "";
+        for(Produto a : this.produtos.stream().filter(t -> t.getQuantidade() == 0).collect(Collectors.toList())){
+            estoqueVazio += a.imprimir() + "\n";
+        }
+        return estoqueVazio;
+    }
+    public String listarPorFabricante(String fabricante){
+        String listarPorFabricante = "";
+        for(Produto a : this.produtos.stream().filter(t -> t.getFabricante() == fabricante).collect(Collectors.toList())){
+            listarPorFabricante += a.imprimir() + "\n";
+        }
+        return listarPorFabricante;
+    }
+    public String listarPorValidade(String validade){
+        return validade;//verificar local date para criar o metodo.
+    }
+   
 }
+
